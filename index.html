@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام الإجازات - تحويل تلقائي</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 100px; background: #f4f7f6; }
+        .box { background: white; padding: 30px; border-radius: 10px; display: inline-block; shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .loader { border: 5px solid #f3f3f3; border-top: 5px solid #1a73e8; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 20px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+    <script>
+        // استبدل الرابط أدناه برابط الـ exec الخاص بك من جوجل
+        const googleUrl = "https://script.google.com/macros/s/AKfycbwzEYAACnzBVuRVuYFJsC1RCVTXKYTd0EXcaWFSMdJdRmUMxgIG54YtPcU50LQKOpFO/exec";
+
+        window.onload = function() {
+            setTimeout(() => { window.location.href = googleUrl; }, 1500);
+        };
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h2>جاري فتح نظام الإجازات...</h2>
+        <div class="loader"></div>
+        <p>إذا لم تفتح الصفحة تلقائياً، <a id="link" href="#">اضغط هنا</a></p>
+    </div>
+    <script>document.getElementById('link').href = googleUrl;</script>
+</body>
+</html>
