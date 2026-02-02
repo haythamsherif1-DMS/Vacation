@@ -5,26 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نظام الإجازات - تحويل تلقائي</title>
     <style>
-        body { font-family: sans-serif; text-align: center; padding-top: 100px; background: #f4f7f6; }
-        .box { background: white; padding: 30px; border-radius: 10px; display: inline-block; shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .loader { border: 5px solid #f3f3f3; border-top: 5px solid #1a73e8; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 20px auto; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            text-align: center; 
+            padding-top: 100px; 
+            background: #f4f7f6; 
+            margin: 0;
+        }
+        .box { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 15px; 
+            display: inline-block; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+            max-width: 90%;
+        }
+        h2 { color: #1a73e8; margin-bottom: 20px; }
+        .loader { 
+            border: 5px solid #f3f3f3; 
+            border-top: 5px solid #1a73e8; 
+            border-radius: 50%; 
+            width: 50px; 
+            height: 50px; 
+            animation: spin 1s linear infinite; 
+            margin: 20px auto; 
+        }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        p { color: #666; font-size: 16px; }
+        a { color: #1a73e8; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
     </style>
     <script>
-        // استبدل الرابط أدناه برابط الـ exec الخاص بك من جوجل
+        // رابط الـ exec الجديد الخاص بك
         const googleUrl = "https://script.google.com/macros/s/AKfycbxOVTM-pN2NzR7Bby8fNweKKeoWV4X4WKomoKu5fYmqIV4tpQkXeNvGInjCdoyPHO_M/exec";
 
         window.onload = function() {
-            setTimeout(() => { window.location.href = googleUrl; }, 1500);
+            // التحويل التلقائي بعد 1.5 ثانية
+            setTimeout(() => { 
+                window.location.href = googleUrl; 
+            }, 1500);
         };
     </script>
 </head>
 <body>
     <div class="box">
-        <h2>جاري فتح نظام الإجازات...</h2>
+        <h2>نظام إدارة الإجازات</h2>
         <div class="loader"></div>
-        <p>إذا لم تفتح الصفحة تلقائياً، <a id="link" href="#">اضغط هنا</a></p>
+        <p>جاري تحويلك للمنصة، يرجى الانتظار...</p>
+        <p style="font-size: 14px;">إذا لم تفتح الصفحة تلقائياً، <a id="link" href="#">اضغط هنا للدخول</a></p>
     </div>
-    <script>document.getElementById('link').href = googleUrl;</script>
+    <script>
+        // تأكيد ربط الزر اليدوي بالرابط الجديد
+        document.getElementById('link').href = googleUrl;
+    </script>
 </body>
 </html>
