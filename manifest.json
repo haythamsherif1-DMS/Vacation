@@ -1,23 +1,21 @@
 {
   "short_name": "BBR Corner",
-  "name": "BBR Corner Construction Systems",
+  "name": "BBR Corner Systems",
   "icons": [
     {
       "src": "icon-192.png",
       "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
+      "sizes": "192x192"
     },
     {
       "src": "icon-512.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
+      "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "scope": "./",
   "theme_color": "#1a73e8",
-  "scope": "/"
+  "background_color": "#ffffff"
 }
