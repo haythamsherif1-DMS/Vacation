@@ -1,7 +1,6 @@
 {
   "short_name": "BBR Corner",
   "name": "BBR Corner Construction Systems",
-  "description": "نظام إدارة الإجازات - BBR Corner",
   "icons": [
     {
       "src": "icon-192.png",
@@ -16,12 +15,9 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": ".",
   "display": "standalone",
-  "scope": "./",
-  "theme_color": "#1a73e8",
   "background_color": "#ffffff",
-  "orientation": "portrait",
-  "dir": "rtl",
-  "lang": "ar"
+  "theme_color": "#1a73e8",
+  "scope": "/"
 }
