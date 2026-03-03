@@ -1,38 +1,43 @@
-const CACHE_NAME = 'vacation-system-v1'; // غير v1 إلى v2 عند الرغبة في تحديث الكاش
+const CACHE_NAME = 'bbr-corner-v1'; // غير هذا الرقم عند التحديث
 const urlsToCache = [
-  '/',
-  'index.html', // تأكد أن اسم ملف الـ HTML هو index.html
+  './',
+  './index.html',
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png'
 ];
 
-// تثبيت الـ Service Worker وتخزين الملفات
+// تثبيت ملفات التطبيق الأساسية
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        return cache.addAll(urlsToCache);
-      })
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(urlsToCache);
+    })
   );
+  self.skipWaiting();
 });
 
-// تفعيل النسخة الجديدة وحذف الكاش القديم
+// حذف الكاش القديم عند تفعيل نسخة جديدة
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cache => {
           if (cache !== CACHE_NAME) {
-            console.log('Service Worker: Clearing Old Cache');
             return caches.delete(cache);
           }
         })
       );
     })
   );
+  self.clients.claim();
 });
 
-// استراتيجية الشبكة أولاً (Network First) لأن تطبيقك يعتمد على رابط خارجي
+// استراتيجية التعامل مع الطلبات (الشبكة أولاً)
 self.addEventListener('fetch', event => {
   event.respondWith(
-    fetch(event.request).catch(() => caches.match(event.request))
+    fetch(event.request).catch(() => {
+      return caches.match(event.request);
+    })
   );
 });
