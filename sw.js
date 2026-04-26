@@ -1,5 +1,5 @@
 // اسم الكاش - قم بتغيير v1 إلى v2 أو أي رقم جديد عند الرغبة في إجبار التطبيق على التحديث
-const CACHE_NAME = 'bbr-corner-cache-v1';
+const CACHE_NAME = 'bbr-corner-cache-v2';
 
 // الملفات التي سيتم تخزينها للعمل أوفلاين ولتحسين السرعة
 const urlsToCache = [
